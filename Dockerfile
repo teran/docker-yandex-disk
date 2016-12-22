@@ -1,8 +1,6 @@
 FROM debian:jessie
 MAINTAINER Igor Shishkin <me@teran.ru>
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt-get update && \
     apt-get dist-upgrade -y
 RUN apt-get install -y wget
