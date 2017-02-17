@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Igor Shishkin <me@teran.ru>
+MAINTAINER Mitry Pyostrovsky <mitrypyostrovsky@gmail.com>
 
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
@@ -14,10 +14,10 @@ RUN echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" | tee -a /etc/
     apt-get clean && \
     rm -rvf /var/lib/apt/lists/*
 
-RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && \
-    locale-gen --purge en_US.UTF-8
+RUN echo 'ru_RU.UTF-8 UTF-8' > /etc/locale.gen && \
+    locale-gen --purge ru_RU.UTF-8
 
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+ENV LANG ru_RU.UTF-8
+ENV LC_ALL ru_RU.UTF-8
 
 ENTRYPOINT ["/usr/bin/yandex-disk"]
