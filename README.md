@@ -1,13 +1,14 @@
-# Yandex.Disk official client in Docker
+# Yandex.Disk-клиент в Docker-контейнере
 
-Usage is exactly the same as for local installation, for more details:
+Установка производится аналогично локальной версии, просто изучите справку:
 
 ```
 docker run -it teran/yandex-disk --help
 ```
 
-For better security it's fine to have config and token file to be placed
-somewhere outside the container and simply mounted within such as data folder:
+
+Для большей безопасности желательно поместить файл настроек и файл ключа 
+во внешнюю папку (вне контейнера) и смонтировать её, например, в папку data:
 
 ```
 docker run -d \
@@ -16,5 +17,5 @@ docker run -d \
   teran/yandex-disk start -D --dir=/data
 ```
 
-For multiple instances it's not such a bad idea to have dedicated tokens for
-each one.
+Для запуска нескольких экземпляров было бы правильно иметь по отдельному
+ключу на каждый.
